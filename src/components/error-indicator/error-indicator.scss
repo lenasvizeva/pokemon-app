@@ -1,0 +1,20 @@
+.error-indicator {
+  margin: 0 auto;
+  text-align: center;
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  span {
+    display: block;
+    color: #efb751;
+    margin: 5px 0;
+  }
+
+  .boom {
+    display: block;
+    font-size: 20px;
+  }
+}
+

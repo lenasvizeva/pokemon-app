@@ -1,0 +1,38 @@
+.header {  
+  margin-bottom: 20px;
+  padding: 20px;
+  display: inline-flex!important;
+
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    
+    li {
+      margin-right: 70px;
+      font-size: 1rem;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin: 0;
+    margin-right: 15%;
+    white-space: nowrap;
+  }
+
+  h3 a {
+    color: #fff;
+
+    &:hover {
+      color: grey;
+    }
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

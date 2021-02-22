@@ -1,0 +1,23 @@
+.item-list {
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: center;
+
+  .card {
+    width: 20%;
+    height: 300px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    img {
+      width: 100%;
+    }
+
+    span {
+      font-size: 20px;
+      text-transform: capitalize;
+    }
+  }
+}
