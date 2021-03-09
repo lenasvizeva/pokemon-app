@@ -2,6 +2,7 @@
   flex-direction: row;
   flex-flow: wrap;
   justify-content: center;
+  margin-bottom: 30px;
 
   .card {
     width: 20%;
@@ -12,7 +13,8 @@
     justify-content: space-evenly;
 
     img {
-      width: 100%;
+      width: 160px;
+      height: 160px;
     }
 
     span {

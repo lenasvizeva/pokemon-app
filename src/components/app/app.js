@@ -7,7 +7,7 @@ import MainPage from '../pages'
 import PokeapiService from '../../services/pokeapi-service'
 import { PokeapiServiceProvider } from '../pokeapi-service-context'
 import ErrorIndicator from '../error-indicator'
-import ItemList from '../item-list/item-list'
+import ItemDetailsContainer from '../item-details/container'
 
 export default class App extends Component {  
   pokeapiService = new PokeapiService()
@@ -27,10 +27,17 @@ export default class App extends Component {
           <div className="app">
             <Header />
             
-            
-            <Switch>
-              <Route path='/' component={MainPage} exact />  
-            </Switch>
+            <div className="container">
+              <Switch>
+                <Route path='/' component={MainPage} exact />  
+                <Route path='/:id' 
+                      render={({ match }) => {
+                        const { id } = match.params 
+                        return <ItemDetailsContainer itemId={id}/> 
+                      }}
+                />
+              </Switch>
+            </div>
 
           </div>
         </Router>

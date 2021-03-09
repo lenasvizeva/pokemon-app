@@ -17,34 +17,27 @@ export default class PokeapiService {
 
   getAllPokemons = async () => {
     const res = await this.getResource(`/pokemon/`)   
-    // return res.results.map(this._transformPokemon)
     return res.results
   }
 
-  // getPokemon = async (id) => {
-  //   const pokemon = await this.getResource(`/pokemon/5`)
-  //   return this._transformPokemon(pokemon)
-  // }
+  getPokemon = async (id) => {
+    const pokemon = await this.getResource(`/pokemon/${id}`)
+    return this._transformPokemon(pokemon)
+  }
 
-  // _extractId = (item) => {
-  //   const idRegExp = /\/([0-9]*)\/$/
-  //   console.log(item)
-  //   return item.url.match(idRegExp)[1]
-  // }
-
-  // _transformPokemon = (pokemon) => {
-  //   return {
-  //     id: pokemon.id,
-  //     name: pokemon.name,
-  //     height: pokemon.height,
-  //     weight: pokemon.weight,
-  //     abilities: pokemon.abilities,
-  //     forms: pokemon.forms
-  //   }
-  // }
+  _transformPokemon = (pokemon) => {
+    return {
+      id: pokemon.id,
+      name: pokemon.name,
+      baseExperience: pokemon.base_experience,
+      height: pokemon.height,
+      order: pokemon.order,
+      weight: pokemon.weight,
+      abilities: pokemon.abilities,
+      forms: pokemon.forms,
+      image: pokemon.sprites.front_default,
+      moves: pokemon.moves,
+      species: pokemon.species
+    }
+  }
 }
-
-const pokeapi = new PokeapiService()
-pokeapi.getAllPokemons().then((res) => {
-  console.log(res)
-})

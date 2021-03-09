@@ -1,44 +1,31 @@
 import React, { Component } from 'react'
 import './item-list.scss'
-import PokeapiService from '../../services/pokeapi-service'
-import testPic from '../../img/slowpoke.png'
 
-export default class ItemList extends Component {
-  pokeapi = new PokeapiService()
+const idRegExp = /\/([0-9]*)\/$/
+const _imageBase = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
 
-  state = {
-    data: null
-  }
+const ItemList = (props) => {
+  const {data, onItemSelected} = props 
 
-  componentDidMount() {
-    this.updateList()
-  }
+  const items = data.map((item) => {
+    const id = item.url.match(idRegExp)[1]
 
-  updateList = () => {
-    this.pokeapi
-      .getAllPokemons()
-      .then((res) => {
-        this.setState({
-          data: res.map((item) => {
-            const idRegExp = /\/([0-9]*)\/$/
-            return (
-              <li className="list-group-item card"
-                key={item.url.match(idRegExp)[1]}>
-                  <img src={testPic} />
-                  <span>{item.name}</span>
-              </li>
-            )
-          })
-        })
-        
-      })
-  }
-
-  render () {
     return (
-      <ul className="list-group item-list">
-        {this.state.data}
-      </ul>
+      <li className="list-group-item card"
+        key={id}
+        onClick={() => 
+        onItemSelected(id)}>
+          <img src={`${_imageBase}/${id}.png`} />
+          <span>{item.name}</span>
+      </li>
     )
-  }  
+  })
+        
+  return (
+    <ul className="list-group item-list">
+      {items}
+    </ul>
+  ) 
 }
+
+export default ItemList

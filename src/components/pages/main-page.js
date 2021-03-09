@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemList from '../item-list/item-list'
+import ItemListContainer from '../item-list/container'
 
 const MainPage = ({ history, match }) => {
   const {id} = match.params
@@ -7,7 +7,7 @@ const MainPage = ({ history, match }) => {
   return(
     <div className="main-page">
       <div className="card-container">
-        <ItemList/>
+        <ItemListContainer onItemSelected={(id) => history.push(id)} />
       </div>
     </div>
   )
