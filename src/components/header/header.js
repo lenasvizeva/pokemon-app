@@ -5,14 +5,16 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <div className="header">
-      <h3>
-        <Link to="/">Pokemon App</Link>
-      </h3>
+      <div className="container">
+        <h3>
+          <Link to="/">Pokemon App</Link>
+        </h3>
 
-      <ul className="menu d-flex">
-        <li><Link to="/people/">Pokemon</Link></li>
-      </ul>
-
+        <div className="menu">
+          <Link to="/">Pokemon list</Link>
+        </div>
+        
+      </div>
     </div>
   )
 }   

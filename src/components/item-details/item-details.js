@@ -1,82 +1,18 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './item-details.scss'
-import PokeapiService from '../../services/pokeapi-service'
-import Spinner from '../spinner'
-import ErrorIndicator from '../error-indicator'
 
-export default class ItemDetails extends Component {
-  pokeapiService = new PokeapiService()
-    
-  state = {
-    item: null,
-    loading: true,
-    error: false
-  }
-  
-  componentDidMount() {
-    this.updateItem()
-  }
-
-  componentDidUpdate = (prevProps) => {
-    if (this.props.itemId !== prevProps.itemId) {
-      this.updateItem()
-    }
-  }
-
-  onError = (err) => {
-    this.setState({
-      error: true,
-      loading: false
-    })
-  }
-
-  updateItem() {
-    const { itemId, getData } = this.props
-
-    if (!itemId) {
-      return
-    } 
-
-    getData(itemId) 
-      .then((res) => {
-        const newItem = res
-        this.setState({
-          item: newItem,
-          loading: false,
-          error: false
-        })
-      }) 
-  }
-
-  render() {
-    const {item, loading, error} = this.state
-
-    const hasData = !(loading || error)
-    const errorMessage = error? <ErrorIndicator /> : null
-    const spinner = loading? <Spinner /> : null
-    const content = hasData? <ItemView item={item} /> : null
-
-    return (
-      <div className="card item-details">
-        {errorMessage}
-        {spinner}
-        {content}
-      </div>
-    )
-  }
-}
+const _imageBase = 'https://pokeres.bastionbot.org/images/pokemon'
 
 const ItemView = ({item}) => {
 
   return (
     <div className="item">
-      <h4>{item.name}</h4> 
 
       <img className="item-image"
-          src={item.image} />
+          src={`${_imageBase}/${item.id}.png`} />
 
       <div className="item-info item-info--base">
-        
+        <h4>{item.name}</h4> 
         <ul>
           <li>Base experience: {item.baseExperience}</li>
           <li>Height: {item.height}</li>
@@ -123,8 +59,9 @@ const ItemView = ({item}) => {
           </ul>
         </li>
 
-      </ul>
-      
+      </ul>    
     </div>
   )
 }
+
+export default ItemView

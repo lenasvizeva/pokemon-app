@@ -1,25 +1,32 @@
-.item-list {
-  flex-direction: row;
-  flex-flow: wrap;
-  justify-content: center;
-  margin-bottom: 30px;
+.card-container {
+  margin-right: -30px;
 
-  .card {
-    width: 20%;
-    height: 300px;
-    margin: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  .item-list {
+    width: 100%;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-left: -15px;
 
-    img {
-      width: 160px;
-      height: 160px;
-    }
+    .card {
+      min-width: 20%;
+      height: 300px;
+      margin: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-grow: 1;
 
-    span {
-      font-size: 20px;
-      text-transform: capitalize;
+      img {
+        width: 160px;
+        height: 160px;
+      }
+
+      span {
+        font-size: 20px;
+        text-transform: capitalize;
+      }
     }
   }
 }

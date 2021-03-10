@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './item-list.scss'
 
 const idRegExp = /\/([0-9]*)\/$/
-const _imageBase = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
+// const _imageBase = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
+const _imageBase = 'https://pokeres.bastionbot.org/images/pokemon'
 
 const ItemList = (props) => {
   const {data, onItemSelected} = props 
