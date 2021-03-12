@@ -1,10 +1,10 @@
 import React from 'react'
 import './header.scss'
-import { Link, Router } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Menu from '../menu'
 
-const Header = ({ history, match }) => {
-  // const {id} = match.params
+const Header = () => {
+  const history = useHistory()
 
   return (
     <div className="header">

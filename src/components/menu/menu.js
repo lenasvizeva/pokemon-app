@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Select from 'react-select'
 import withPokeapiService from '../hoc/with-pokeapi-service'
 
+const idRegExp = /\/([0-9]*)\/$/
+
 const MenuContainer = (props) => {
   return (
     <Menu {...props} />
@@ -22,6 +24,8 @@ class Menu extends Component {
       options: [],
       selectedOption: null
     }
+
+    this.handleChange.bind(this)
   }
 
   componentDidMount() {
@@ -34,9 +38,12 @@ class Menu extends Component {
       })
       .then((array) => {
         array.map(item => {
+          const id = item.url.match(idRegExp)[1]
+
           const pokemonName = {
             value: item.name,
-            label: item.name
+            label: item.name,
+            id: id
           }
           nameList.push(pokemonName)
         })
@@ -48,11 +55,11 @@ class Menu extends Component {
   
   handleChange = selectedOption => {
     this.setState({ selectedOption })
+    this.props.onItemSelected(selectedOption.id)
   }
 
   render () {
     const {selectedOption, options} = this.state
-    const { onItemSelected } = this.props
     
     return (
       <div>
