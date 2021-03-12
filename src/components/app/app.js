@@ -29,8 +29,9 @@ export default class App extends Component {
             
             <div className="container">
               <Switch>
+
                 <Route path='/' component={MainPage} exact />  
-                <Route path='/:id' 
+                <Route path='/:id?' 
                       render={({ match }) => {
                         const { id } = match.params 
                         return <ItemDetailsContainer itemId={id}/> 

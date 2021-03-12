@@ -1,5 +1,7 @@
+@import '../../style/mixins';
+
 .card-container {
-  margin-right: -30px;
+  margin: 0 -15px;
 
   .item-list {
     width: 100%;
@@ -7,7 +9,6 @@
     flex-flow: wrap;
     justify-content: center;
     margin-bottom: 30px;
-    margin-left: -15px;
 
     .card {
       min-width: 20%;
@@ -18,14 +19,34 @@
       justify-content: space-evenly;
       flex-grow: 1;
 
+      @include breakpoint('tablet') {
+        min-width: 30%;
+      }
+
+      @include breakpoint('small') {
+        min-width: 50%;
+        height: 200px;
+        margin: 10px 20px;
+        justify-content: space-between;
+      }
+
       img {
         width: 160px;
         height: 160px;
+
+        @include breakpoint('small') {
+          width: 120px;
+          height: 120px;
+        }
       }
 
       span {
         font-size: 20px;
         text-transform: capitalize;
+
+        @include breakpoint('small') {
+          font-size: 18px;
+        }
       }
     }
   }

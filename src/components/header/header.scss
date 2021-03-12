@@ -1,32 +1,126 @@
+@import '../../style/mixins';
+
 .header {  
   width: 100%;
   margin-bottom: 20px;
   padding: 20px;
 
-  .menu {
+  @include breakpoint('small') {
+    margin-bottom: 0;
+    padding: 10px;
+  }
+
+  .pokemon-list {
+    width: 200px;
     list-style: none;
     padding: 0;
     margin: 0;
     margin-left: 50px;
     display: inline-block;
+    outline: none;
+    vertical-align: super;
 
-    li {
-      margin-right: 70px;
-      font-size: 16px;
+    @include breakpoint('small') {
+      width: 100%;
+      margin: 0;
+    }
+
+    &__single-value {
+      color: #5fbd8d;
+      font-size: 18px;
+      line-height: 29px;
+      text-transform: capitalize;
+    }
+
+    &__menu {
+      background-color: grey;
+      border-radius: 0 0 4px 4px;
+      margin: 0;
+
+      @include breakpoint('small') {
+        width: 100%;
+      }
+    }
+
+    &__menu-list {
+      display: block;
+
+      .pokemon-list__option {
+        color: #222;
+        text-transform: capitalize;
+
+        &--is-selected {
+          background-color: #5fbd8d;
+        }
+
+        &--is-focused {
+          background-color: #fff;
+        }
+      }
+    }
+
+    &__control {
+      background-color: #222;
+      border: none;
+      outline: none;
+      box-shadow: none;
+
+      @include breakpoint('small') {
+        max-width: 200px;
+        margin: 0 auto;
+      }
+
+      &--is-focused, &--menu-is-open {
+        background-color: #222;
+        
+        &:hover {
+          border-color: transparent;
+        }
+      }
+
+      &--menu-is-open {
+        background-color: grey;
+        border-radius: 4px 4px 0 0;
+      }
+    }
+
+    &__placeholder {
+      font-size: 18px;
+      letter-spacing: 0.3px;
+      color: #5fbd8d;
+    }
+    
+    &__indicator {
+      color: #5fbd8d;
+    }
+
+    &__indicator-separator {
+      display: none;
     }
   }
 
-  h3 {
-    font-size: 2rem;
+  .logo {
+    font-size: 32px;
     margin: 0;
     display: inline-block;
-  }
 
-  h3 a {
-    color: #fff;
+    @include breakpoint('small') {
+      display: block;
+      // font-size: 22px;
+      margin-bottom: 15px;
+    }
 
-    &:hover {
-      color: grey;
+    a {
+      color: #fff;
+
+      &:hover {
+        color: grey;
+      }
+
+      @include breakpoint('small') {
+        display: block;
+        text-align: center;
+      }
     }
   }
 
@@ -36,3 +130,4 @@
     }
   }
 }
+

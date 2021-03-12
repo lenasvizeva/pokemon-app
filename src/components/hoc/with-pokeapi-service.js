@@ -8,7 +8,6 @@ const withPokeapiService = (mapMethodsToProps) => (Wrapped) => {
         {
           (pokeapiService) => {
             const serviceProps = mapMethodsToProps(pokeapiService)
-            console.log(props)
             return (
               <Wrapped {...props} {...serviceProps} />
             )
