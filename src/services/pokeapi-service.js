@@ -16,7 +16,7 @@ export default class PokeapiService {
   }
 
   getAllPokemons = async () => {
-    const res = await this.getResource(`/pokemon/?limit=20&offset=40`)   
+    const res = await this.getResource(`/pokemon/?limit=75`)   
     return res.results
   }
 

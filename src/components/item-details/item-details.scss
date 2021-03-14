@@ -29,6 +29,7 @@
 
       @include breakpoint('small') {
         font-size: 24px;
+        text-align: center;
       }
     }
 
@@ -38,11 +39,14 @@
       grid-column-end: 2;
       grid-row-start: 1;
       grid-row-end: 2;
+      max-width: 250px;
+      min-width: 200px;
+      margin: auto 0;
 
       @include breakpoint('small') {
-        max-width: 250px;
+        max-width: 200px;
         margin: 0 auto;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         display: block;
       }
     }
@@ -54,7 +58,7 @@
 
       li {
         padding: 5px 0;
-        font-size: 16px;
+        font-size: 14px;
         letter-spacing: 0.3px;
       } 
 
@@ -75,8 +79,8 @@
         }
 
         ul li {
-          font-size: 20px;
-          line-height: 33px;
+          font-size: 18px;
+          line-height: 27px;
 
           @include breakpoint('tablet') {
             line-height: 35px;

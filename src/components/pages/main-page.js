@@ -1,8 +1,7 @@
 import React from 'react'
 import ItemListContainer from '../item-list/container'
 
-const MainPage = ({ history, match }) => {
-  // const {id} = match.params
+const MainPage = ({ history }) => {
 
   return(
     <div className="main-page">

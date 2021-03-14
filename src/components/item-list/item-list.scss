@@ -3,29 +3,34 @@
 .card-container {
   margin: 0 -15px;
 
+  @include breakpoint('small') {
+    margin: 0;
+  }
+
   .item-list {
     width: 100%;
-    flex-direction: row;
-    flex-flow: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
     margin-bottom: 30px;
 
+    @include breakpoint('tablet') { 
+      grid-template-columns: repeat(3, auto);
+    }
+
+    @include breakpoint('small') {
+      grid-template-columns: repeat(1, auto);
+    }
+
     .card {
-      min-width: 20%;
       height: 300px;
       margin: 15px;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
-      flex-grow: 1;
-
-      @include breakpoint('tablet') {
-        min-width: 30%;
-      }
 
       @include breakpoint('small') {
-        min-width: 50%;
-        height: 200px;
+        min-width: 90%;
+        height: 210px;
         margin: 10px 20px;
         justify-content: space-between;
       }
@@ -49,5 +54,18 @@
         }
       }
     }
+  }
+}
+
+.pagination {
+  justify-content: center;
+  margin-bottom: 20px;
+
+  li {
+    padding: 8px 14px;
+    margin: 0 5px;
+    border-radius: 4px;
+    background-color: #424242;
+    cursor: pointer;
   }
 }
