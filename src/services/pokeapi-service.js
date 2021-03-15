@@ -37,7 +37,9 @@ export default class PokeapiService {
       forms: pokemon.forms,
       image: pokemon.sprites.front_default,
       moves: pokemon.moves,
-      species: pokemon.species
+      species: pokemon.species,
+      stats: pokemon.stats,
+      types: pokemon.types
     }
   }
 }
