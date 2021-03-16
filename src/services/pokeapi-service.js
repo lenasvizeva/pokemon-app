@@ -1,12 +1,12 @@
+import { API_BASE } from '../constans'
+
 // класс-сервис, который инкапсулирует код для работы с сервером
 // и изолирует его от остального кода приложения
 
 export default class PokeapiService {
 
-  _apiBase = 'https://pokeapi.co/api/v2'
-
   getResource = async (url) => {
-    const res = await fetch(`${this._apiBase}${url}`)
+    const res = await fetch(`${API_BASE}${url}`)
 
     if (!res.ok) {
       throw new Error(`Could not fetch ${url}` + 

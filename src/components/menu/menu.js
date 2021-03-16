@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import Select from 'react-select'
 import withPokeapiService from '../hoc/with-pokeapi-service'
 import PropTypes from 'prop-types'
-
-const idRegExp = /\/([0-9]*)\/$/
+import { ID_REG_EXP } from '../../constans' 
 
 const MenuContainer = (props) => {
   return (
@@ -39,7 +38,7 @@ class Menu extends Component {
       })
       .then((array) => {
         array.map(item => {
-          const id = item.url.match(idRegExp)[1]
+          const id = item.url.match(ID_REG_EXP)[1]
 
           const pokemonName = {
             value: item.name,
@@ -53,12 +52,19 @@ class Menu extends Component {
         })
       })
   }
+
+  componentWillUnmount() {
+    this.setState({
+      selectedOption: null
+    }) 
+  }
   
   handleChange = selectedOption => {
     const {onItemSelected} = this.props
 
     this.setState({ selectedOption })
     onItemSelected(selectedOption.id)
+
   }
 
   render () {

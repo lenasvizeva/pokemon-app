@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
+import { IMAGE_BASE } from '../../constans'
 import './item-details.scss'
-
-const _imageBase = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
-// const _imageBase = 'https://pokeres.bastionbot.org/images/pokemon'
 
 const ItemView = ({item}) => {
   
@@ -15,7 +13,7 @@ const ItemView = ({item}) => {
     <div className="item">
 
       <img className="item-image"
-          src={`${_imageBase}/${item.id}.png`} />
+          src={`${IMAGE_BASE}/${item.id}.png`} />
 
       <div className="item-info item-info--base">
         <h4>{item.name}</h4> 

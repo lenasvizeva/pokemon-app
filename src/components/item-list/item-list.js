@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import './item-list.scss'
 import PropTypes from 'prop-types'
-
-const idRegExp = /\/([0-9]*)\/$/
-
-const _imageBase = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
-// const _imageBase = 'https://pokeres.bastionbot.org/images/pokemon'
+import * as Constans from '../../constans'
 
 
 export default class ItemList extends Component {
@@ -36,14 +32,14 @@ export default class ItemList extends Component {
     const pageNumbers = []
 
     const items = currentTodos.map((item) => {
-      const id = item.url.match(idRegExp)[1]
+      const id = item.url.match(Constans.ID_REG_EXP)[1]
   
       return (
         <li className="list-group-item card"
           key={id}
           onClick={() => 
           onItemSelected(id)}>
-            <img src={`${_imageBase}/${id}.png`} />
+            <img src={`${Constans.IMAGE_BASE}/${id}.png`} />
             <span>{item.name}</span>
         </li>
       )
