@@ -3,6 +3,7 @@ import withPokeapiService from '../hoc/with-pokeapi-service'
 import ItemView from './item-details'
 import Spinner from '../spinner'
 import ErrorIndicator from '../error-indicator'
+import PropTypes from 'prop-types'
 
 const ItemDetailsContainer = (props) => {
   return (
@@ -78,6 +79,11 @@ class ItemDetails extends Component {
       </div>
     )
   }
+}
+
+ItemDetails.propTypes = {
+  itemId: PropTypes.string.isRequired,
+  getData: PropTypes.func
 }
 
 export default withPokeapiService(mapMethodsToProps)(ItemDetailsContainer)

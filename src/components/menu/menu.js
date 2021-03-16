@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Select from 'react-select'
 import withPokeapiService from '../hoc/with-pokeapi-service'
+import PropTypes from 'prop-types'
 
 const idRegExp = /\/([0-9]*)\/$/
 
@@ -54,8 +55,10 @@ class Menu extends Component {
   }
   
   handleChange = selectedOption => {
+    const {onItemSelected} = this.props
+
     this.setState({ selectedOption })
-    this.props.onItemSelected(selectedOption.id)
+    onItemSelected(selectedOption.id)
   }
 
   render () {
@@ -72,6 +75,11 @@ class Menu extends Component {
       </div>
     )
   }
+}
+
+Menu.propTypes = {
+  getData: PropTypes.func.isRequired,
+  onItemSelected: PropTypes.func
 }
 
 export default withPokeapiService(mapMethodsToProps)(MenuContainer)

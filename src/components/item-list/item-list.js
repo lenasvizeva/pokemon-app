@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import './item-list.scss'
+import PropTypes from 'prop-types'
 
 const idRegExp = /\/([0-9]*)\/$/
 
-// const _imageBase = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
-const _imageBase = 'https://pokeres.bastionbot.org/images/pokemon'
+const _imageBase = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
+// const _imageBase = 'https://pokeres.bastionbot.org/images/pokemon'
 
 
 export default class ItemList extends Component {
@@ -76,4 +77,13 @@ export default class ItemList extends Component {
       </React.Fragment>
     ) 
   }
+}
+
+ItemList.defaultProps = {
+  onItemSelected: () => {}
+}
+
+ItemList.propTypes = {
+  onItemSelected: PropTypes.func,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired
 }
