@@ -5,11 +5,11 @@ import { API_BASE } from '../constans'
 
 export default class PokeapiService {
 
-  getResource = async (url) => {
-    const res = await fetch(`${API_BASE}${url}`)
+  getResource = async (link) => {
+    const res = await fetch(`${API_BASE}${link}`)
 
     if (!res.ok) {
-      throw new Error(`Could not fetch ${url}` + 
+      throw new Error(`Could not fetch ${link}` + 
       `, received ${res.status}`)
     }
     return res.json()
