@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/pokemon-app/static/css/main.9c90a487.chunk.css",
-    "main.js": "/pokemon-app/static/js/main.742641f7.chunk.js",
-    "main.js.map": "/pokemon-app/static/js/main.742641f7.chunk.js.map",
-    "runtime-main.js": "/pokemon-app/static/js/runtime-main.12c2cfcd.js",
-    "runtime-main.js.map": "/pokemon-app/static/js/runtime-main.12c2cfcd.js.map",
-    "static/js/2.40c967f5.chunk.js": "/pokemon-app/static/js/2.40c967f5.chunk.js",
-    "static/js/2.40c967f5.chunk.js.map": "/pokemon-app/static/js/2.40c967f5.chunk.js.map",
-    "index.html": "/pokemon-app/index.html",
-    "static/css/main.9c90a487.chunk.css.map": "/pokemon-app/static/css/main.9c90a487.chunk.css.map",
-    "static/js/2.40c967f5.chunk.js.LICENSE.txt": "/pokemon-app/static/js/2.40c967f5.chunk.js.LICENSE.txt",
-    "static/media/error_icon.96ed97d8.png": "/pokemon-app/static/media/error_icon.96ed97d8.png"
+    "main.css": "https://lenasvizeva.github.io/pokemon-app/static/css/main.9c90a487.chunk.css",
+    "main.js": "https://lenasvizeva.github.io/pokemon-app/static/js/main.d774416b.chunk.js",
+    "main.js.map": "https://lenasvizeva.github.io/pokemon-app/static/js/main.d774416b.chunk.js.map",
+    "runtime-main.js": "https://lenasvizeva.github.io/pokemon-app/static/js/runtime-main.af5f4b76.js",
+    "runtime-main.js.map": "https://lenasvizeva.github.io/pokemon-app/static/js/runtime-main.af5f4b76.js.map",
+    "static/js/2.40c967f5.chunk.js": "https://lenasvizeva.github.io/pokemon-app/static/js/2.40c967f5.chunk.js",
+    "static/js/2.40c967f5.chunk.js.map": "https://lenasvizeva.github.io/pokemon-app/static/js/2.40c967f5.chunk.js.map",
+    "index.html": "https://lenasvizeva.github.io/pokemon-app/index.html",
+    "static/css/main.9c90a487.chunk.css.map": "https://lenasvizeva.github.io/pokemon-app/static/css/main.9c90a487.chunk.css.map",
+    "static/js/2.40c967f5.chunk.js.LICENSE.txt": "https://lenasvizeva.github.io/pokemon-app/static/js/2.40c967f5.chunk.js.LICENSE.txt",
+    "static/media/error_icon.96ed97d8.png": "https://lenasvizeva.github.io/pokemon-app/static/media/error_icon.96ed97d8.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.12c2cfcd.js",
+    "static/js/runtime-main.af5f4b76.js",
     "static/js/2.40c967f5.chunk.js",
     "static/css/main.9c90a487.chunk.css",
-    "static/js/main.742641f7.chunk.js"
+    "static/js/main.d774416b.chunk.js"
   ]
 }
