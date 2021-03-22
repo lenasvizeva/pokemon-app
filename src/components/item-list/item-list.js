@@ -3,7 +3,6 @@ import './item-list.scss'
 import PropTypes from 'prop-types'
 import * as Constans from '../../constans'
 
-
 export default class ItemList extends Component {
   constructor(props) {
     super(props)

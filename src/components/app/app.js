@@ -31,7 +31,7 @@ export default class App extends Component {
     return (
       <ErrorBoundary>
         <PokeapiServiceProvider value={this.pokeapiService}>
-          <Router>
+          <Router basename="/pokemon-app">
             <div className="app">
               <Header />
               
